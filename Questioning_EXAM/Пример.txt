@@ -1,0 +1,40 @@
+//Страничка
+
+@model MVCExam.Models.User
+
+@{
+    ViewBag.Title = "UserInfo";
+}
+
+<h2>UserInfo</h2>
+
+<form asp-controller="Profile" asp-action="UserInfo" data-ajax="true" data-ajax-mode="replace" method="post">
+    <label>userName</label>
+    <input type="text" name="userName" />
+    <label>Surname</label>
+    <input type="text" name="surname" />
+    <input type="submit" value="Enter" />
+</form>
+
+//Controller
+
+        [HttpGet]
+        public ActionResult UserInfo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UserInfo(string userName, string surname)
+        {
+
+            if(userProfile.FindeUserByNameAndSurname(userName, surname))
+            {
+                return RedirectToAction("Questions");
+            }
+            else
+            {
+                userProfile.AddUser(userName, surname);
+                return RedirectToAction("Questions");
+            }
+        }
