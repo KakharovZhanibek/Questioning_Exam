@@ -6,16 +6,16 @@ namespace Questioning_EXAM.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Answers
+    public partial class Answer
     {
         public int Id { get; set; }
 
         [Required]
         [StringLength(200)]
-        public string Answer { get; set; }
+        public string AnswerText { get; set; }
 
-        public int? QuestionOfAnswer { get; set; }
+        public int QuestionOfAnswer { get; set; }
 
-        public virtual Questions Questions { get; set; }
+        public virtual Question Questions { get; set; }
     }
 }

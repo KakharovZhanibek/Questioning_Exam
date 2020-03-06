@@ -135,8 +135,8 @@
     </Compile>
     <Compile Include="Models\Answers.cs" />
     <Compile Include="Models\FIO.cs" />
-    <Compile Include="Models\MyDB.cs" />
-    <Compile Include="Models\Questions.cs" />
+    <Compile Include="Models\Context\MyDB.cs" />
+    <Compile Include="Models\Question.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

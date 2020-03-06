@@ -6,10 +6,10 @@ namespace Questioning_EXAM.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Questions
+    public partial class Question
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Questions()
+        public Question()
         {
             Answers = new HashSet<Answers>();
         }
@@ -17,9 +17,8 @@ namespace Questioning_EXAM.Models
         public int Id { get; set; }
 
         [StringLength(2000)]
-        public string Question { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Answers> Answers { get; set; }
+        public string QuestionText { get; set; }
+        public int AnswerId { get; set; }
+        public virtual Answer Answers { get; set; }
     }
 }

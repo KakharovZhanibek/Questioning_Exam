@@ -13,11 +13,8 @@ namespace Questioning_EXAM.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(120)]
         public string FirstName { get; set; }
-
         [Required]
-        [StringLength(120)]
         public string LastName { get; set; }
     }
 }
